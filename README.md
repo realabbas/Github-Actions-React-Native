@@ -1,6 +1,6 @@
 # 🚀 Github Action for React Native Build
 
-Add the *.github/workflows/build.yml* in the project.
+Add the ``` .github/workflows/build.yml ``` in the project.
 
 ```
 name: build
