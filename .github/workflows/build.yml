@@ -1,0 +1,37 @@
+name: build
+on:
+  push:
+    branches:
+      - master
+jobs:
+  # First Job
+  install-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install npm dependencies
+        run: |
+          npm install
+      # For testing
+      - name: Run tests
+        run: |
+          npm test
+  # Second Job
+  build-android:
+    needs: install-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install npm dependencies
+        run: |
+          npm install
+        # Build Command
+      - name: Build Android Release
+        run: |
+          cd android && ./gradlew assembleRelease
+      # Upload to Artifact
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: app-release.apk
+          path: android/app/build/outputs/apk/release/
