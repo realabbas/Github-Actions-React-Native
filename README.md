@@ -36,3 +36,15 @@ jobs:
 ```
 
 Build will be triggered as soon as the commit is pushed to the master branch.
+
+## Troubleshoot
+
+### Gradlew commands not working 
+
+You can try to execute the following command before run gradle commands.
+
+``` 
+chmod +x ./gradlew
+```
+
+![Gradlew Command Not working in Github Actions React Native](https://dyjpb62732.i.lithium.com/t5/image/serverpage/image-id/3072i1C8314A5EA6EFEF8/image-size/large?v=1.0&px=999)
