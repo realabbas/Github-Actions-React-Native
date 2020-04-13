@@ -1,4 +1,5 @@
-name: react-native-android-build-apk
+name: "react-native-android-build-apk"
+description: "This github action automatically builds the android apk under the artifact section whenever a commit is pushed into the master branch"
 on:
   push:
     branches:
