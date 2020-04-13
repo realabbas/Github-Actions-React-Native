@@ -1,6 +1,10 @@
 # 🚀 Github Action for React Native Build
 
-Add the *build.yml* as follows ``` .github/workflows/build.yml ``` in the project.
+This github action automatically builds the android apk under the artifact section whenever a commit is pushed into the master branch
+
+## Installation
+
+Add the *action.yml* as follows ``` .github/workflows/build.yml ``` in the project.
 
 ```
 name: build
