@@ -1,7 +1,7 @@
 name: "React Native Android Build APK"
 description: "This github action automatically builds the android apk under the artifact section"
 author: "realabbas"
-nranding:
+branding:
       icon: "archive"
       color: "blue"
 on:
