@@ -1,8 +1,9 @@
 name: "React Native Android Build APK"
 description: "This github action automatically builds the android apk under the artifact section"
 author: "realabbas"
-icon: "archive"
-color: "blue"
+nranding:
+      icon: "archive"
+      color: "blue"
 on:
   push:
     branches:
@@ -41,3 +42,5 @@ jobs:
         with:
           name: app-release.apk
           path: android/app/build/outputs/apk/release/
+runs:
+  using: node12
