@@ -8,7 +8,7 @@ Add the *action.yml* as follows ``` .github/workflows/build.yml ``` in the proje
 For more reference see the official [docs](https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow#creating-a-workflow-file)
 
 ```
-name: react-native-android-build
+name: react-native-android-build-apk
 on:
   push:
     branches:
