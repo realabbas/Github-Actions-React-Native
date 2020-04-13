@@ -43,5 +43,5 @@ jobs:
           name: app-release.apk
           path: android/app/build/outputs/apk/release/
 runs:
-  using: node12
-  main: dist/index.js
+  using: 'docker'
+  image: 'Dockerfile'
