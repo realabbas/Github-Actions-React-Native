@@ -1,4 +1,4 @@
-FROM golang:latest
+FROM ubuntu:latest
 
 LABEL "com.github.actions.name"="React Native Android Build APK"
 LABEL "com.github.actions.description"="This github action automatically builds the android apk under the artifact section"
