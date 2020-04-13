@@ -5,6 +5,7 @@ This github action automatically builds the android apk under the artifact secti
 ## Installation
 
 Add the *action.yml* as follows ``` .github/workflows/build.yml ``` in the project.
+For more reference see the official [docs](https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow#creating-a-workflow-file)
 
 ```
 name: build
