@@ -1,4 +1,4 @@
-name: "react-native-android-build-apk"
+name: "React Native Android Build APK"
 description: "This github action automatically builds the android apk under the artifact section"
 author: "realabbas"
 icon: "archive"
