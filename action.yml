@@ -42,6 +42,3 @@ jobs:
         with:
           name: app-release.apk
           path: android/app/build/outputs/apk/release/
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
