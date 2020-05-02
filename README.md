@@ -1,4 +1,4 @@
-# 🚀 Github Action for React Native Build
+![Github Action for React Native Build](https://raw.githubusercontent.com/realabbas/Github-Actions-React-Native/master/demo/github%20action.png)
 
 This github action automatically builds the android apk under the artifact section whenever a commit is pushed into the master branch
 
