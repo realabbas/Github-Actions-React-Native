@@ -2,6 +2,8 @@
 
 This github action automatically builds the android apk under the artifact section whenever a commit is pushed into the master branch
 
+![Visitors](https://visitor-badge.glitch.me/badge?page_id=realabbas.github-actions-react-native)
+
 ## Installation
 
 Add the *action.yml* as follows ``` .github/workflows/build.yml ``` in the project.
