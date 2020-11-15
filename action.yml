@@ -30,12 +30,29 @@ jobs:
       - name: Install npm dependencies
         run: |
           npm install
+
+      - name: Cache Gradle Wrapper
+        uses: actions/cache@v2
+        with:
+          path: ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-wrapper-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
+
+      - name: Cache Gradle Dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-caches-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-caches-
+
       - name: Make Gradlew Executable
         run: cd android && chmod +x ./gradlew
         # Build Command
+
       - name: Build Android Release
         run: |
-          cd android && gradlew assembleRelease
+          cd android && gradlew assembleRelease --no-daemon
+      
       # Upload to Artifact
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
