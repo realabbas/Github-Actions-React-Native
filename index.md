@@ -1,37 +1,57 @@
-## Welcome to GitHub Pages
+![Github Action for React Native Build](https://raw.githubusercontent.com/realabbas/Github-Actions-React-Native/master/demo/github%20action.png)
 
-You can use the [editor on GitHub](https://github.com/realabbas/Github-Actions-React-Native/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+This github action automatically builds the android apk under the artifact section whenever a commit is pushed into the master branch
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+![Visitors](https://visitor-badge.glitch.me/badge?page_id=realabbas.github-actions-react-native)
 
-### Markdown
+## Installation
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Add the *action.yml* as follows ``` .github/workflows/build.yml ``` in the project.
+For more reference see the official [docs](https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow#creating-a-workflow-file)
 
-```markdown
-Syntax highlighted code block
+```
+name: react-native-android-build-apk
+on:
+  push:
+    branches:
+      - master
+jobs:
+  install-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install npm dependencies
+        run: |
+          npm install
+  build-android:
+    needs: install-and-test
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v2
+      - name: Install npm dependencies
+        run: |
+          npm install
+      - name: Build Android Release
+        run: |
+          cd android && ./gradlew assembleRelease
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: app-release.apk
+          path: android/app/build/outputs/apk/release/
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Build will be triggered as soon as the commit is pushed to the master branch.
 
-### Jekyll Themes
+## Troubleshoot
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/realabbas/Github-Actions-React-Native/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### Gradlew commands not working 
 
-### Support or Contact
+You can try to execute the following command before run gradle commands.
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+``` 
+chmod +x ./gradlew
+```
+
+
