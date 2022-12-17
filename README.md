@@ -19,7 +19,7 @@ jobs:
   install-and-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Install npm dependencies
         run: |
           npm install
@@ -27,7 +27,7 @@ jobs:
     needs: install-and-test
     runs-on: ubuntu-latest
     steps: 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Install npm dependencies
         run: |
           npm install
